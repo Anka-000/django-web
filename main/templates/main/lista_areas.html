@@ -1,0 +1,13 @@
+<h1>Portal de Transparencia</h1>
+<h2>Áreas del Ayuntamiento</h2>
+<ul>
+    {% for area in areas %}
+        <li>
+            <a href="{% url 'detalle_area' area.slug %}">
+                {{ area.nombre }}
+            </a>
+        </li>
+    {% empty %}
+        <li>No hay áreas registradas aún.</li>
+    {% endfor %}
+</ul>
